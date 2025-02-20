@@ -253,3 +253,100 @@ footer {
   text-align: center;
   padding: 15px;
 }
+
+/* Media Queries */
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 28px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .itinerary h2 {
+    font-size: 24px;
+  }
+
+  .day h3 {
+    font-size: 22px;
+  }
+
+  .time-block h4 {
+    font-size: 18px;
+  }
+
+  .packing-list h2 {
+    font-size: 28px;
+  }
+
+  .packing-list ul li {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Stack images in a single column on mobile */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  header {
+    padding: 10px 20px;
+  }
+
+  .banner {
+    padding-top: 120px; /* Make space for the header */
+  }
+}
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .banner h1 {
+    font-size: 32px;
+  }
+
+  .banner p {
+    font-size: 18px;
+  }
+
+  .itinerary h2 {
+    font-size: 28px;
+  }
+
+  .day h3 {
+    font-size: 24px;
+  }
+
+  .time-block h4 {
+    font-size: 20px;
+  }
+
+  .packing-list h2 {
+    font-size: 30px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+  }
+}
+
+/* Larger screens (laptops, desktops) */
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+  }
+}
