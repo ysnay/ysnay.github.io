@@ -81,17 +81,48 @@ nav ul li a:hover {
 
 .itinerary h2 {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .day {
   background: white;
   padding: 20px;
-  margin: 10px auto;
+  margin: 20px auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 700px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.day:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.day h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #007BFF;
+}
+
+.day p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.day ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.day ul li {
+  font-size: 16px;
+  color: #555;
+  list-style-type: disc;
+  margin: 5px 0;
 }
 
 /* Gallery Section */
