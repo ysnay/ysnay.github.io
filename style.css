@@ -1,75 +1,216 @@
+/* Reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header Styling */
+header {
+  background: #f4a261;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Fix excessive white space issue */
+.banner {
+  background: url('assets/banner.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  padding: 50px 20px; /* Reduce padding */
+  min-height: 250px; /* Reduce the height of the banner */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner h1 {
+  margin: 10px 0; /* Reduce margin */
+  font-size: 2.5em;
+}
+
+.banner p {
+  font-size: 1.2em;
+}
+
+/* Main content area */
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 100px; /* Push content down to avoid being hidden under fixed header */
+}
+
+/* Itinerary Section */
+.itinerary {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.itinerary h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day {
+  background: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #f4a261;
+  border-radius: 5px;
+}
+
+.day h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.day ul {
+  list-style: none;
+  padding: 0;
+}
+
+.day ul li {
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.day ul li strong {
+  color: #e76f51;
+}
+
+/* Gallery Section */
+.gallery {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.gallery h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.contact a {
+  color: #e76f51;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #264653;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   header {
-    background: #f4a261;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  header .logo {
-    font-size: 1.5em;
-  }
-  
+
   header nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
   }
-  
+
   header nav ul li {
-    margin: 0 10px;
+    margin-bottom: 10px;
   }
-  
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
+
   .banner {
-    background: url('banner.jpg') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+    min-height: 200px;
   }
-  
+
+  .banner h1 {
+    font-size: 2em;
+  }
+
+  .banner p {
+    font-size: 1em;
+  }
+
   main {
-    padding: 20px;
-  }
-  
-  .itinerary, .gallery, .contact {
-    margin: 20px 0;
-  }
-  
-  .itinerary .day {
-    margin: 10px 0;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .gallery .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-  }
-  
-  .gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  footer {
-    background: #264653;
-    color: white;
-    text-align: center;
     padding: 10px;
+    margin-top: 80px;
   }
+
+  .gallery .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
