@@ -56,6 +56,7 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   position: relative;
+  padding-top: 80px; /* Add padding-top to make space for fixed header */
 }
 
 .banner .overlay {
