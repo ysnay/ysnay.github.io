@@ -6,72 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 15px 40px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li {
-  display: inline;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-nav ul li a:hover {
-  color: #007BFF;
-}
-
-/* Hero Section */
-.banner {
-  background: url("assets/hero.jpg") no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.banner .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 50px;
-  border-radius: 10px;
-}
-
-.banner h1 {
-  font-size: 40px;
-}
-
-.banner p {
-  font-size: 20px;
-}
-
 /* Itinerary Section */
 .itinerary {
   padding: 50px 20px;
@@ -85,6 +19,7 @@ nav ul li a:hover {
   color: #333;
 }
 
+/* Individual Day Style */
 .day {
   background: white;
   padding: 20px;
@@ -94,20 +29,43 @@ nav ul li a:hover {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
+  position: relative;
   transition: all 0.3s ease;
 }
 
 .day:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
 }
 
+/* Timeline-like layout for activities */
+.day::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #007BFF;
+  border-radius: 10px;
+}
+
+/* Day Title */
 .day h3 {
   font-size: 24px;
   margin-bottom: 15px;
   color: #007BFF;
 }
 
-.day p {
+/* Add icons */
+.day .time-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Day content */
+.day p, .day ul {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
@@ -123,6 +81,31 @@ nav ul li a:hover {
   color: #555;
   list-style-type: disc;
   margin: 5px 0;
+}
+
+/* Add icon for times of the day (morning, afternoon, evening) */
+.day .morning,
+.day .afternoon,
+.day .evening {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.morning {
+  color: #ff9800; /* Morning color */
+}
+
+.afternoon {
+  color: #ff5722; /* Afternoon color */
+}
+
+.evening {
+  color: #3f51b5; /* Evening color */
+}
+
+/* Add hover effects */
+.day:hover .morning, .day:hover .afternoon, .day:hover .evening {
+  color: #007BFF;
 }
 
 /* Gallery Section */
