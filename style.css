@@ -311,6 +311,21 @@ footer {
   .banner {
     padding-top: 120px; /* Make space for the header */
   }
+
+  /* Navigation in Portrait Mode */
+  nav ul {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+  }
+
+  nav ul li {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
 }
 
 /* Tablets (up to 1024px) */
