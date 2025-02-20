@@ -91,7 +91,7 @@ nav ul li a:hover {
   color: #333;
 }
 
-/* Individual Day Style */
+/* Itinerary Section Image */
 .day {
   background: white;
   padding: 30px;
@@ -102,7 +102,16 @@ nav ul li a:hover {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
   position: relative;
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-image {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .day:hover {
@@ -364,6 +373,14 @@ footer {
 
   .grid {
     grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+  }
+}
+
+/* For tablet and mobile responsiveness */
+@media (max-width: 768px) {
+  .day-image {
+    width: 100%; /* Full width for mobile */
+    height: 150px;
   }
 }
 
