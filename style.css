@@ -56,8 +56,7 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   position: relative;
-  padding-top: 100px;
-  background-size: cover; /* Ensures background covers the entire area */
+  padding-top: 100px; /* Add padding to prevent overlap with fixed header */
 }
 
 .banner .overlay {
@@ -68,26 +67,10 @@ nav ul li a:hover {
 
 .banner h1 {
   font-size: 40px;
-  margin-bottom: 15px;
 }
 
 .banner p {
   font-size: 20px;
-}
-
-/* Image Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Images will be responsive */
-  gap: 10px;
-  padding: 20px;
-}
-
-.grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Maintain aspect ratio */
-  border-radius: 8px;
 }
 
 /* Itinerary Section */
@@ -115,29 +98,168 @@ nav ul li a:hover {
   text-align: left;
   position: relative;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .day:hover {
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Day Title */
+.day h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #9FE2BF;
+  font-weight: bold;
+}
+
+/* Times of the Day (Morning, Afternoon, Evening) */
+.day .time-block {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Icon styling for times of the day */
+.time-block i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #9FE2BF;
+}
+
+/* Text Styling for Morning, Afternoon, Evening */
+.time-block h4 {
+  font-size: 20px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.time-block p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Packing List Section */
+.packing-list {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+  margin-top: 50px; /* Adds spacing between the sections */
+}
+
+.packing-list h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.packing-list p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.packing-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 auto;
+  text-align: left;
+  width: 80%;
+  max-width: 800px;
+}
+
+.packing-list ul li {
+  margin-bottom: 15px;
+  font-weight: normal;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.packing-list ul li:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.packing-list ul li strong {
+  color: #007BFF; /* Make the item names stand out */
+}
+
+.packing-list ul li ul {
+  list-style-type: square;
+  padding-left: 20px;
+  font-weight: normal;
+  margin-top: 10px;
+  color: #555;
+}
+
+.packing-list ul li ul li {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.contact a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
 /* Media Queries */
 
 /* Mobile Devices (up to 768px) */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: row;  /* Ensure navigation stays horizontal */
-    justify-content: space-around;
-  }
-
-  .banner {
-    height: 50vh; /* Reduce hero section height for better mobile view */
-    padding-top: 80px;  /* Make space for the header */
-  }
-
   .banner h1 {
     font-size: 28px;
-    margin-bottom: 10px;
   }
 
   .banner p {
@@ -149,7 +271,7 @@ nav ul li a:hover {
   }
 
   .day h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .time-block h4 {
@@ -165,19 +287,44 @@ nav ul li a:hover {
   }
 
   .grid {
-    grid-template-columns: 1fr; /* Stack images in portrait mode */
+    grid-template-columns: 1fr; /* Stack images in a single column on mobile */
   }
 
   .logo {
     font-size: 20px;
   }
 
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
   header {
     padding: 10px 20px;
   }
 
-  .itinerary {
-    padding: 20px;
+  .banner {
+    padding-top: 120px; /* Make space for the header */
+  }
+
+  /* Navigation in Portrait Mode */
+  nav ul {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+  }
+
+  nav ul li {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 22px;
   }
 }
 
@@ -208,7 +355,7 @@ nav ul li a:hover {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
   }
 }
 
