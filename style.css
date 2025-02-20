@@ -57,6 +57,7 @@ nav ul li a:hover {
   text-align: center;
   position: relative;
   padding-top: 100px; /* Add padding to prevent overlap with fixed header */
+  background-size: cover; /* Ensures background covers the entire area */
 }
 
 .banner .overlay {
@@ -67,10 +68,26 @@ nav ul li a:hover {
 
 .banner h1 {
   font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .banner p {
   font-size: 20px;
+}
+
+/* Image Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Images will be responsive */
+  gap: 10px;
+  padding: 20px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px;
 }
 
 /* Itinerary Section */
@@ -98,9 +115,6 @@ nav ul li a:hover {
   text-align: left;
   position: relative;
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .day:hover {
