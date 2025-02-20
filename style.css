@@ -111,7 +111,7 @@ nav ul li a:hover {
 .day h3 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #007BFF;
+  color: #9FE2BF;
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@ nav ul li a:hover {
 .time-block i {
   margin-right: 10px;
   font-size: 20px;
-  color: #40B5AD;
+  color: #007BFF;
 }
 
 /* Text Styling for Morning, Afternoon, Evening */
@@ -179,7 +179,20 @@ nav ul li a:hover {
 
 .packing-list ul li {
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: normal;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.packing-list ul li:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.packing-list ul li strong {
+  color: #007BFF; /* Make the item names stand out */
 }
 
 .packing-list ul li ul {
