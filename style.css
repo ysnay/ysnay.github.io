@@ -106,10 +106,11 @@ nav ul li a:hover {
   flex-direction: column;
 }
 
+/* Itinerary Section Image */
 .day-image {
   width: 100%;
-  max-height: 250px; /* Limit the height for larger screens */
-  object-fit: cover;
+  height: auto; /* Let the height adjust automatically */
+  object-fit: contain; /* Ensure the whole image is visible without cropping */
   border-radius: 8px;
   margin-bottom: 15px;
 }
