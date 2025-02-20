@@ -49,33 +49,67 @@ nav ul li a:hover {
   color: #007BFF;
 }
 
-/* Hero Section */
+/* Hero Section with Gradient Overlay */
 .banner {
   background: url("assets/hero.jpg") no-repeat center center/cover;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
   position: relative;
-  padding-top: 100px; /* Add padding to prevent overlap with fixed header */
-  background-size: cover; /* Ensures background covers the entire area */
+  background-size: cover;
 }
 
 .banner .overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
   padding: 50px;
   border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.banner h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
+.headline {
+  font-size: 60px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: fadeIn 1.5s ease-out;
 }
 
-.banner p {
-  font-size: 20px;
+.headline span {
+  color: #9FE2BF; /* Accent color for highlights */
+}
+
+.cta-button {
+  background-color: #9FE2BF;
+  padding: 15px 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #007BFF;
+  transform: scale(1.1);
+}
+
+/* Scroll Animation for Hero Text */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Itinerary Section */
