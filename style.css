@@ -18,6 +18,11 @@ header {
   z-index: 1000;
 }
 
+/* Navigation Bar Position */
+header {
+  position: relative; /* Use relative to keep the nav from staying fixed */
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -54,7 +59,7 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   position: relative;
-  padding-top: 100px; /* Add padding to prevent overlap with header */
+  padding-top: 100px; /* Add padding to prevent overlap with fixed header */
   background-size: cover; /* Ensures background covers the entire area */
 }
 
@@ -255,7 +260,7 @@ footer {
 
 /* Mobile Devices (up to 768px) */
 @media (max-width: 768px) {
-  /* Make header static instead of fixed for mobile */
+  /* Remove fixed positioning for header in mobile */
   header {
     position: relative;
   }
@@ -317,7 +322,7 @@ footer {
 
   /* Navigation in Portrait Mode */
   nav ul {
-    position: static; /* Change from fixed to static */
+    position: static; /* Changed to static position */
     top: auto;
     right: auto;
   }
