@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -18,16 +18,7 @@ header {
   z-index: 1000;
 }
 
-/* Navigation Bar Position */
-header {
-  position: relative; /* Use relative to keep the nav from staying fixed */
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
+/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
@@ -56,48 +47,72 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
   position: relative;
-  padding-top: 150px; /* Increase padding to make space for the button */
-  background-size: cover; /* Ensures background covers the entire area */
 }
 
-.banner .overlay {
-  background: rgba(0, 0, 0, 0.5);
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
   padding: 50px;
   border-radius: 10px;
-}
-
-.banner h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
-  color: #FFD700; /* Gold color for a fun vibe */
-}
-
-.banner p {
-  font-size: 22px;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  margin-bottom: 30px; /* Add space below subheader */
-}
-
-/* Start Exploring Button */
-.cta-button {
-  background-color: #9FE2BF;
   color: white;
-  font-size: 20px;
-  padding: 12px 30px;
+}
+
+.cta-button {
+  background: #ff5733;
+  color: white;
+  padding: 12px 24px;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 30px; /* Push button further down */
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .cta-button:hover {
-  background-color: #0056b3;
+  background: #e04e24;
+}
+
+/* Crew Section */
+.crew {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.crew-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.crew-member {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  text-align: center;
+}
+
+.crew-member img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.crew-member h3 {
+  font-size: 20px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.crew-member p {
+  font-size: 16px;
+  color: #555;
 }
 
 /* Itinerary Section */
@@ -107,13 +122,6 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.itinerary h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* Itinerary Section Image */
 .day {
   background: white;
   padding: 30px;
@@ -123,161 +131,14 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
-  position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .day-image {
   width: 100%;
-  max-height: 250px; /* Limit the height for larger screens */
+  max-height: 250px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-}
-
-/* Hover effect on the day card */
-.day:hover {
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Day Title */
-.day h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #9FE2BF;
-  font-weight: bold;
-}
-
-/* Times of the Day (Morning, Afternoon, Evening) */
-.day .time-block {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Icon styling for times of the day */
-.time-block i {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #555;
-}
-
-/* Text Styling for Morning, Afternoon, Evening */
-.time-block h4 {
-  font-size: 20px;
-  color: #333;
-  margin: 5px 0;
-}
-
-.time-block p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Packing List Section */
-.packing-list {
-  padding: 50px 20px;
-  background: #f5f5f5;
-  text-align: center;
-  margin-top: 50px; /* Adds spacing between the sections */
-}
-
-.packing-list h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-.packing-list p {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.packing-list ul {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 16px;
-  color: #555;
-  line-height: 1.8;
-  margin: 0 auto;
-  text-align: left;
-  width: 80%;
-  max-width: 800px;
-}
-
-.packing-list ul li {
-  margin-bottom: 15px;
-  font-weight: normal;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.packing-list ul li:hover {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.packing-list ul li strong {
-  color: #9FE2BF; /* Make the item names stand out */
-}
-
-.packing-list ul li ul {
-  list-style-type: square;
-  padding-left: 20px;
-  font-weight: normal;
-  margin-top: 10px;
-  color: #555;
-}
-
-.packing-list ul li ul li {
-  font-weight: normal;
-  margin-bottom: 5px;
-}
-
-/* Gallery Section */
-.gallery {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.gallery h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-
-.grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Contact Section */
-.contact {
-  padding: 50px 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.contact a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* Footer */
@@ -286,130 +147,4 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
-}
-
-/* Media Queries */
-
-/* Mobile Devices (up to 768px) */
-@media (max-width: 768px) {
-  /* Remove fixed positioning for header in mobile */
-  header {
-    position: relative;
-  }
-
-  /* Update hero text */
-  .banner h1 {
-    font-size: 28px;
-  }
-
-  .banner p {
-    font-size: 16px;
-  }
-
-  .itinerary h2 {
-    font-size: 24px;
-  }
-
-  .day h3 {
-    font-size: 22px;
-  }
-
-  .time-block h4 {
-    font-size: 18px;
-  }
-
-  .packing-list h2 {
-    font-size: 28px;
-  }
-
-  .packing-list ul li {
-    font-size: 14px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr; /* Stack images in a single column on mobile */
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  nav ul li {
-    display: block;
-  }
-
-  header {
-    padding: 10px 20px;
-  }
-
-  .banner {
-    padding-top: 120px; /* Make space for the header */
-  }
-
-  /* Navigation in Portrait Mode */
-  nav ul {
-    position: static; /* Changed to static position */
-    top: auto;
-    right: auto;
-  }
-
-  nav ul li {
-    font-size: 14px;
-  }
-
-  .logo {
-    font-size: 22px;
-  }
-}
-
-/* Tablets (up to 1024px) */
-@media (max-width: 1024px) {
-  .banner h1 {
-    font-size: 32px;
-  }
-
-  .banner p {
-    font-size: 18px;
-  }
-
-  .itinerary h2 {
-    font-size: 28px;
-  }
-
-  .day h3 {
-    font-size: 24px;
-  }
-
-  .time-block h4 {
-    font-size: 20px;
-  }
-
-  .packing-list h2 {
-    font-size: 30px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
-  }
-}
-
-/* For tablet and mobile responsiveness */
-@media (max-width: 768px) {
-  .day-image {
-    width: 100%; /* Full width for mobile */
-    height: 150px;
-  }
-}
-
-/* Larger screens (laptops, desktops) */
-@media (min-width: 1025px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
-  }
 }
