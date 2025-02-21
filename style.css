@@ -53,6 +53,7 @@ nav ul li a:hover {
   text-align: center;
   position: relative;
   color: white;
+  padding: 20px;
 }
 
 .overlay {
@@ -60,6 +61,7 @@ nav ul li a:hover {
   padding: 50px;
   border-radius: 10px;
   text-align: center;
+  max-width: 90%;
 }
 
 .headline {
@@ -67,9 +69,9 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-.highlight {
-  font-weight: bold;
-  color: #ff5733;
+.subheading {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .cta-button {
@@ -80,17 +82,17 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 18px;
   border-radius: 5px;
-  margin-top: 15px;
   display: inline-block;
   text-decoration: none;
   transition: background 0.3s ease;
+  margin-top: 15px;
 }
 
 .cta-button:hover {
   background: #e04e24;
 }
 
-/* Crew Section */
+/* Meet the Crew Section */
 .crew {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -102,13 +104,6 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-.crew-intro {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* Crew Container - Ensures proper alignment */
 .crew-container {
   display: flex;
   justify-content: center;
@@ -119,15 +114,15 @@ nav ul li a:hover {
   margin: auto;
 }
 
-/* Individual Crew Member Card */
+/* Crew Member Card */
 .crew-member {
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 200px; /* Keeps cards a reasonable size */
-  flex: 1 1 200px; /* Allows responsiveness */
+  width: 180px;
+  flex: 1 1 200px;
   transition: transform 0.3s ease;
 }
 
@@ -139,10 +134,10 @@ nav ul li a:hover {
 /* Crew Member Image */
 .crew-member img {
   width: 100%;
-  max-width: 180px; /* Prevents oversized images */
-  height: 180px;
+  max-width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 50%; /* Makes images circular */
+  border-radius: 50%;
   margin-bottom: 10px;
 }
 
@@ -153,33 +148,27 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-/* Crew Member Description */
+/* Crew Member Bio */
 .crew-member p {
   font-size: 14px;
   color: #555;
 }
 
-/* Responsive Fixes */
+/* Responsive Fix for Crew Section */
 @media (max-width: 768px) {
   .crew-container {
-    flex-direction: column; /* Stacks crew members on mobile */
+    flex-direction: column;
     align-items: center;
   }
 
   .crew-member {
-    width: 80%; /* Makes the card take more space */
+    width: 90%;
     max-width: 250px;
   }
 
   .crew-member img {
-    max-width: 140px; /* Prevents oversized images */
+    max-width: 140px;
     height: 140px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .crew-container {
-    max-width: 900px;
   }
 }
 
@@ -196,7 +185,7 @@ nav ul li a:hover {
   color: #333;
 }
 
-/* Individual Day Style */
+/* Individual Itinerary Card */
 .day {
   background: white;
   padding: 30px;
@@ -209,10 +198,11 @@ nav ul li a:hover {
   position: relative;
 }
 
+/* Itinerary Images */
 .day-image {
   width: 100%;
   max-height: 300px;
-  object-fit: contain; /* Makes the full image visible */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -257,12 +247,6 @@ nav ul li a:hover {
   color: #333;
 }
 
-.packing-list p {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
 .packing-list ul {
   list-style-type: none;
   padding-left: 0;
@@ -292,11 +276,6 @@ nav ul li a:hover {
 .gallery {
   padding: 50px 20px;
   text-align: center;
-}
-
-.gallery h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
 }
 
 .grid {
