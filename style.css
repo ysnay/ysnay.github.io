@@ -17,21 +17,32 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 /* Navigation */
-nav ul {
+nav {
+  display: flex;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li {
+.nav-links li {
   display: inline;
 }
 
-nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: black;
   font-size: 18px;
@@ -39,8 +50,17 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: #007BFF;
+}
+
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* Hero Section */
@@ -126,7 +146,6 @@ nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 
-/* Crew Member Hover Effect */
 .crew-member:hover {
   transform: scale(1.05);
 }
@@ -152,24 +171,6 @@ nav ul li a:hover {
 .crew-member p {
   font-size: 14px;
   color: #555;
-}
-
-/* Responsive Fix for Crew Section */
-@media (max-width: 768px) {
-  .crew-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .crew-member {
-    width: 90%;
-    max-width: 250px;
-  }
-
-  .crew-member img {
-    max-width: 140px;
-    height: 140px;
-  }
 }
 
 /* Itinerary Section */
@@ -321,8 +322,30 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .headline {
-    font-size: 28px;
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .crew-container {
@@ -332,17 +355,5 @@ footer {
 
   .day-image {
     max-height: 200px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1025px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
