@@ -1,23 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+  
     menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-
-        // Change icon between hamburger and close (X)
-        if (menuToggle.innerHTML === "☰") {
-            menuToggle.innerHTML = "✖";
-        } else {
-            menuToggle.innerHTML = "☰";
-        }
+      navMenu.classList.toggle("active");
+  
+      // Change the hamburger icon to "X" when the menu is open
+      if (navMenu.classList.contains("active")) {
+        menuToggle.innerHTML = "✖"; // Cross icon
+      } else {
+        menuToggle.innerHTML = "☰"; // Hamburger icon
+      }
     });
-
-    // Close menu when a link is clicked (for better UX)
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            menuToggle.innerHTML = "☰"; // Reset back to hamburger icon
-        });
-    });
-});
+  });
