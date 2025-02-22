@@ -1,327 +1,331 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Body */
-body {
-  background: #f5f5f5;
-  color: #333;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 15px 40px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-/* Logo */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007BFF;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li {
-  display: inline;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-  background: #007BFF;
-  color: white;
-}
-
-/* Hamburger Menu */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: none;
+/* ===========================
+   🌎 Global Styles
+   =========================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
   }
-
-  nav.active {
-    display: block;
+  
+  body {
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
   }
-
-  nav ul {
-    flex-direction: column;
+  
+  /* ===========================
+     🔹 Header & Navigation
+     =========================== */
+  header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    background: white;
+    padding: 15px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
-
-  nav ul li {
-    display: block;
-    padding: 10px 0;
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF;
   }
-
+  
+  /* Navigation Menu */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background: #007BFF;
+    color: white;
+  }
+  
+  /* 🔹 Hamburger Menu for Mobile */
   .menu-toggle {
-    display: block;
-  }
-}
-
-/* Hero Section */
-.banner {
-  background: url("assets/hero.jpg") no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  color: white;
-  padding: 20px;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 50px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 90%;
-}
-
-.headline {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.subheading {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  background: #ff5733;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  margin-top: 15px;
-}
-
-.cta-button:hover {
-  background: #e04e24;
-}
-
-/* Meet the Crew */
-.crew {
-  padding: 60px 20px;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-.crew h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.crew-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 900px;
-  margin: auto;
-}
-
-.crew-member {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 200px;
-  flex: 1 1 200px;
-  transition: transform 0.3s ease;
-}
-
-.crew-member:hover {
-  transform: scale(1.05);
-}
-
-.crew-member img {
-  width: 100%;
-  max-width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.crew-member h3 {
-  font-size: 20px;
-  color: #007BFF;
-  margin-bottom: 10px;
-}
-
-.crew-member p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* Itinerary */
-.itinerary {
-  padding: 50px 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.itinerary h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.day {
-  background: white;
-  padding: 30px;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  position: relative;
-}
-
-.day img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.day h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #007BFF;
-}
-
-.time-block {
-  margin: 10px 0;
-}
-
-.time-block h4 {
-  font-size: 18px;
-  color: #333;
-}
-
-.time-block p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Packing List */
-.packing-list {
-  padding: 50px 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.packing-list h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.packing-list ul {
-  list-style-type: none;
-  width: 80%;
-  max-width: 600px;
-  margin: auto;
-  text-align: left;
-}
-
-.packing-list ul li {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-}
-
-.packing-list ul li:hover {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .headline {
+    display: none;
     font-size: 28px;
+    cursor: pointer;
   }
-
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      transition: all 0.3s ease;
+    }
+  
+    nav.active {
+      display: block;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+  
+    nav ul li {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+  
+  /* ===========================
+     🌄 Hero Section
+     =========================== */
+  .banner {
+    background: url("assets/hero.jpg") no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    padding: 20px;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+  }
+  
+  .headline {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .subheading {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    background: #ff5733;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+  }
+  
+  .cta-button:hover {
+    background: #e04e24;
+    transform: scale(1.05);
+  }
+  
+  /* ===========================
+     👫 Meet the Crew Section
+     =========================== */
+  .crew {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .crew h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
   .crew-container {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
   }
-
+  
+  .crew-member {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    flex: 1 1 200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .crew-member:hover {
+    transform: scale(1.05);
+  }
+  
+  .crew-member img {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* ===========================
+     📅 Itinerary Section
+     =========================== */
+  .itinerary {
+    padding: 50px 20px;
+    background: #f5f5f5;
+    text-align: center;
+  }
+  
+  .itinerary h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .day {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
   .day img {
-    max-height: 200px;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
   }
-}
-
-@media (max-width: 1024px) {
+  
+  .day h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007BFF;
+  }
+  
+  /* ===========================
+     🎒 Packing List
+     =========================== */
+  .packing-list {
+    padding: 50px 20px;
+    background: #f5f5f5;
+    text-align: center;
+  }
+  
+  .packing-list h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .packing-list ul {
+    list-style-type: none;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .packing-list ul li {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .packing-list ul li:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===========================
+     📸 Gallery Section
+     =========================== */
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
   }
-}
-
-@media (min-width: 1025px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  
+  .grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
   }
-}
+  
+  /* ===========================
+     📞 Contact Section
+     =========================== */
+  .contact {
+    padding: 50px 20px;
+    background: #f5f5f5;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .contact a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* ===========================
+     🔚 Footer
+     =========================== */
+  footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .headline {
+      font-size: 28px;
+    }
+  
+    .crew-container {
+      flex-direction: column;
+    }
+  }

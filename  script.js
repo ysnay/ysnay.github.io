@@ -2,36 +2,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
     const navLinks = document.querySelectorAll("#nav-menu ul li a");
-    
-    // Toggle Menu Visibility
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
 
-        // Toggle Hamburger Icon (☰ to ✖)
+    // Function to toggle menu visibility
+    function toggleMenu() {
+        const isOpen = navMenu.classList.toggle("active");
+        menuToggle.innerHTML = isOpen ? "✖" : "☰";
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    }
+
+    // Function to close the menu
+    function closeMenu() {
         if (navMenu.classList.contains("active")) {
-            menuToggle.innerHTML = "✖";
-        } else {
+            navMenu.classList.remove("active");
             menuToggle.innerHTML = "☰";
+            menuToggle.setAttribute("aria-expanded", "false");
+        }
+    }
+
+    // Toggle menu on click
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent event bubbling
+        toggleMenu();
+    });
+
+    // Close menu when clicking outside
+    document.body.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && event.target !== menuToggle) {
+            closeMenu();
         }
     });
 
-    // Close Menu When Clicking a Link
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
-            menuToggle.innerHTML = "☰";
-        });
-    });
-
-    // Close Menu When Clicking Outside
-    document.addEventListener("click", function (event) {
-        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-            navMenu.classList.remove("active");
-            menuToggle.innerHTML = "☰";
-        }
-    });
-
-    // Smooth Scrolling for Anchor Links
+    // Close menu when clicking a nav link & smooth scrolling
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
@@ -39,11 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                const headerHeight = document.querySelector("header").offsetHeight;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 60, // Adjust for fixed header
+                    top: targetElement.offsetTop - headerHeight - 10, // Adjust for fixed header
                     behavior: "smooth"
                 });
             }
+            closeMenu(); // Ensure menu closes on selection
         });
     });
 });
