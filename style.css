@@ -17,6 +17,7 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 
@@ -29,7 +30,6 @@ header {
 /* Navigation */
 nav {
   display: flex;
-  align-items: center;
 }
 
 .nav-links {
@@ -54,44 +54,13 @@ nav {
   color: #007BFF;
 }
 
-/* Mobile Navigation */
+/* Hamburger Menu for Mobile */
 .menu-toggle {
   display: none;
   font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
-    width: 200px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .nav-links li:last-child {
-    border-bottom: none;
-  }
 }
 
 /* Hero Section */
@@ -120,6 +89,11 @@ nav {
   margin-bottom: 15px;
 }
 
+.subheading {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
 .cta-button {
   background: #ff5733;
   color: white;
@@ -138,7 +112,7 @@ nav {
   background: #e04e24;
 }
 
-/* Crew Section */
+/* Meet the Crew Section */
 .crew {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -160,6 +134,7 @@ nav {
   margin: auto;
 }
 
+/* Crew Member Card */
 .crew-member {
   background: white;
   padding: 20px;
@@ -175,6 +150,7 @@ nav {
   transform: scale(1.05);
 }
 
+/* Crew Member Image */
 .crew-member img {
   width: 100%;
   max-width: 160px;
@@ -184,12 +160,14 @@ nav {
   margin-bottom: 10px;
 }
 
+/* Crew Member Name */
 .crew-member h3 {
   font-size: 20px;
   color: #007BFF;
   margin-bottom: 10px;
 }
 
+/* Crew Member Bio */
 .crew-member p {
   font-size: 14px;
   color: #555;
@@ -228,6 +206,33 @@ nav {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+}
+
+/* Day Title */
+.day h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #9FE2BF;
+  font-weight: bold;
+}
+
+/* Time Blocks */
+.time-block {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-block h4 {
+  font-size: 20px;
+  color: #333;
+}
+
+.time-block p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
 }
 
 /* Packing List Section */
@@ -317,8 +322,30 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .headline {
-    font-size: 28px;
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .crew-container {
@@ -328,17 +355,5 @@ footer {
 
   .day-image {
     max-height: 200px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1025px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
