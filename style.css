@@ -17,32 +17,21 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1000;
 }
 
-/* Logo */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
 /* Navigation */
-nav {
-  display: flex;
-}
-
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.nav-links li {
+nav ul li {
   display: inline;
 }
 
-.nav-links li a {
+nav ul li a {
   text-decoration: none;
   color: black;
   font-size: 18px;
@@ -50,18 +39,8 @@ nav {
   transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
+nav ul li a:hover {
   color: #007BFF;
-}
-
-/* Hamburger Menu for Mobile */
-.menu-toggle {
-  display: none;
-  font-size: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1100;
 }
 
 /* Hero Section */
@@ -147,8 +126,50 @@ nav {
   transition: transform 0.3s ease;
 }
 
+/* Crew Member Hover Effect */
 .crew-member:hover {
   transform: scale(1.05);
+}
+
+/* Crew Member Image */
+.crew-member img {
+  width: 100%;
+  max-width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Crew Member Name */
+.crew-member h3 {
+  font-size: 20px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+/* Crew Member Bio */
+.crew-member p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Fix for Crew Section */
+@media (max-width: 768px) {
+  .crew-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .crew-member {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .crew-member img {
+    max-width: 140px;
+    height: 140px;
+  }
 }
 
 /* Itinerary Section */
@@ -177,6 +198,7 @@ nav {
   position: relative;
 }
 
+/* Itinerary Images */
 .day-image {
   width: 100%;
   max-height: 300px;
@@ -185,11 +207,69 @@ nav {
   margin-bottom: 15px;
 }
 
+/* Day Title */
+.day h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #9FE2BF;
+  font-weight: bold;
+}
+
+/* Time Blocks */
+.time-block {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-block h4 {
+  font-size: 20px;
+  color: #333;
+}
+
+.time-block p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
 /* Packing List Section */
 .packing-list {
   padding: 50px 20px;
   background: #f5f5f5;
   text-align: center;
+}
+
+.packing-list h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.packing-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 auto;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+}
+
+.packing-list ul li {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.packing-list ul li:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Gallery Section */
@@ -212,6 +292,24 @@ nav {
   border-radius: 8px;
 }
 
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* Footer */
 footer {
   background: #333;
@@ -221,55 +319,30 @@ footer {
   font-size: 14px;
 }
 
-/* Mobile Responsive Navigation */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .headline {
+    font-size: 28px;
   }
 
-  nav {
-    display: none;
+  .crew-container {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: max-height 0.4s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
   }
 
-  /* Expand menu when active */
-  nav.active {
-    display: flex;
-    max-height: 500px;
-    padding: 10px 0;
+  .day-image {
+    max-height: 200px;
   }
+}
 
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    text-align: center;
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 15px;
-    width: 100%;
-    color: black;
-    font-size: 20px;
-  }
-
-  .nav-links li a:hover {
-    background: #007BFF;
-    color: white;
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
