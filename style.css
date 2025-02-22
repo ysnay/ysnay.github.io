@@ -1,318 +1,348 @@
-/* ===========================
-   🌎 Global Styles
-   =========================== */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    background: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-  }
-  
-  /* ===========================
-     🔹 Header & Navigation
-     =========================== */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 15px 40px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #007BFF;
-  }
-  
-  /* Navigation Menu */
-  nav {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background: #007BFF;
-    color: white;
-  }
-  
-  /* 🔹 Mobile-Friendly Hamburger Menu */
-  .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  /* Mobile Navigation */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-      z-index: 1100;
-    }
-  
-    nav {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 70%;
-      max-width: 300px;
-      height: 100vh;
-      background: white;
-      box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 60px;
-      transition: all 0.3s ease-in-out;
-    }
-  
-    nav.active {
-      left: 0;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-  
-    nav ul li {
-      width: 100%;
-      text-align: center;
-    }
-  
-    nav ul li a {
-      display: block;
-      padding: 12px;
-      width: 100%;
-      font-size: 18px;
-    }
-  
-    nav ul li a:hover {
-      background: #007BFF;
-      color: white;
-    }
-  }
-  
-  /* ===========================
-     🌄 Hero Section
-     =========================== */
-  .banner {
-    background: url("assets/hero.jpg") no-repeat center center/cover;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    color: white;
-    padding: 20px;
-  }
-  
-  .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 50px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 90%;
-  }
-  
-  .headline {
-    font-size: 36px;
-    margin-bottom: 15px;
-  }
-  
-  .subheading {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .cta-button {
-    background: #ff5733;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    display: inline-block;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin-top: 15px;
-  }
-  
-  .cta-button:hover {
-    background: #e04e24;
-    transform: scale(1.05);
-  }
-  
-  /* ===========================
-     👫 Meet the Crew Section
-     =========================== */
-  .crew {
-    padding: 60px 20px;
-    background: #f9f9f9;
-    text-align: center;
-  }
-  
-  .crew h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
+/* Hero Section */
+.banner {
+  background: url("assets/hero.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  padding: 20px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.headline {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #ff5733;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.cta-button:hover {
+  background: #e04e24;
+}
+
+/* Meet the Crew Section */
+.crew {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.crew h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.crew-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Crew Member Card */
+.crew-member {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 180px;
+  flex: 1 1 200px;
+  transition: transform 0.3s ease;
+}
+
+/* Crew Member Hover Effect */
+.crew-member:hover {
+  transform: scale(1.05);
+}
+
+/* Crew Member Image */
+.crew-member img {
+  width: 100%;
+  max-width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Crew Member Name */
+.crew-member h3 {
+  font-size: 20px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+/* Crew Member Bio */
+.crew-member p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Fix for Crew Section */
+@media (max-width: 768px) {
   .crew-container {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: auto;
   }
-  
+
   .crew-member {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 180px;
-    transition: transform 0.3s ease;
+    width: 90%;
+    max-width: 250px;
   }
-  
-  .crew-member:hover {
-    transform: scale(1.05);
+
+  .crew-member img {
+    max-width: 140px;
+    height: 140px;
   }
-  
-  /* ===========================
-     📅 Itinerary Section
-     =========================== */
-  .itinerary {
-    padding: 40px 20px;
-    background: #f5f5f5;
-    text-align: center;
-  }
-  
-  .itinerary h2 {
+}
+
+/* Itinerary Section */
+.itinerary {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.itinerary h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Individual Itinerary Card */
+.day {
+  background: white;
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+}
+
+/* Itinerary Images */
+.day-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Day Title */
+.day h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #9FE2BF;
+  font-weight: bold;
+}
+
+/* Time Blocks */
+.time-block {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-block h4 {
+  font-size: 20px;
+  color: #333;
+}
+
+.time-block p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Packing List Section */
+.packing-list {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.packing-list h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.packing-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 auto;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+}
+
+.packing-list ul li {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.packing-list ul li:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headline {
     font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
   }
-  
-  .day {
-    background: white;
-    padding: 25px;
-    margin: 15px auto;
-    width: 90%;
-    max-width: 750px;
-    border-radius: 12px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
+
+  .crew-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .day img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+
+  .day-image {
+    max-height: 200px;
   }
-  
-  /* ===========================
-     🎒 Packing List
-     =========================== */
-  .packing-list {
-    padding: 40px 20px;
-    background: #f5f5f5;
-    text-align: center;
-  }
-  
-  .packing-list ul {
-    list-style-type: none;
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-    text-align: left;
-  }
-  
-  /* ===========================
-     📸 Gallery Section
-     =========================== */
+}
+
+@media (max-width: 1024px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
+}
+
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  /* ===========================
-     📞 Contact Section
-     =========================== */
-  .contact {
-    padding: 40px 20px;
-    background: #f5f5f5;
-    text-align: center;
-  }
-  
-  /* ===========================
-     🔚 Footer
-     =========================== */
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-  }
-  
-  /* ===========================
-     📱 Mobile Tweaks
-     =========================== */
-  @media (max-width: 768px) {
-    .headline {
-      font-size: 28px;
-    }
-  
-    .crew-container {
-      flex-direction: column;
-    }
-  
-    .day {
-      width: 95%;
-      padding: 20px;
-    }
-  }
+}
