@@ -3,7 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+  background: #f5f5f5;
+  color: #333;
 }
 
 /* Header */
@@ -17,7 +23,15 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007BFF;
 }
 
 /* Navigation */
@@ -35,12 +49,53 @@ nav ul li a {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  padding: 5px 10px;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #007BFF;
+  background: #007BFF;
+  color: white;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 /* Hero Section */
@@ -82,7 +137,6 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 18px;
   border-radius: 5px;
-  display: inline-block;
   text-decoration: none;
   transition: background 0.3s ease;
   margin-top: 15px;
@@ -92,7 +146,7 @@ nav ul li a:hover {
   background: #e04e24;
 }
 
-/* Meet the Crew Section */
+/* Meet the Crew */
 .crew {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -114,24 +168,21 @@ nav ul li a:hover {
   margin: auto;
 }
 
-/* Crew Member Card */
 .crew-member {
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 180px;
+  width: 200px;
   flex: 1 1 200px;
   transition: transform 0.3s ease;
 }
 
-/* Crew Member Hover Effect */
 .crew-member:hover {
   transform: scale(1.05);
 }
 
-/* Crew Member Image */
 .crew-member img {
   width: 100%;
   max-width: 160px;
@@ -141,38 +192,18 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-/* Crew Member Name */
 .crew-member h3 {
   font-size: 20px;
   color: #007BFF;
   margin-bottom: 10px;
 }
 
-/* Crew Member Bio */
 .crew-member p {
   font-size: 14px;
   color: #555;
 }
 
-/* Responsive Fix for Crew Section */
-@media (max-width: 768px) {
-  .crew-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .crew-member {
-    width: 90%;
-    max-width: 250px;
-  }
-
-  .crew-member img {
-    max-width: 140px;
-    height: 140px;
-  }
-}
-
-/* Itinerary Section */
+/* Itinerary */
 .itinerary {
   padding: 50px 20px;
   background: #f5f5f5;
@@ -185,7 +216,6 @@ nav ul li a:hover {
   color: #333;
 }
 
-/* Individual Itinerary Card */
 .day {
   background: white;
   padding: 30px;
@@ -198,8 +228,7 @@ nav ul li a:hover {
   position: relative;
 }
 
-/* Itinerary Images */
-.day-image {
+.day img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
@@ -207,24 +236,18 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-/* Day Title */
 .day h3 {
-  font-size: 28px;
+  font-size: 24px;
   margin-bottom: 20px;
-  color: #9FE2BF;
-  font-weight: bold;
+  color: #007BFF;
 }
 
-/* Time Blocks */
 .time-block {
   margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .time-block h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
 }
 
@@ -234,7 +257,7 @@ nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* Packing List Section */
+/* Packing List */
 .packing-list {
   padding: 50px 20px;
   background: #f5f5f5;
@@ -244,24 +267,19 @@ nav ul li a:hover {
 .packing-list h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .packing-list ul {
   list-style-type: none;
-  padding-left: 0;
-  font-size: 16px;
-  color: #555;
-  line-height: 1.8;
-  margin: 0 auto;
-  text-align: left;
   width: 80%;
   max-width: 600px;
+  margin: auto;
+  text-align: left;
 }
 
 .packing-list ul li {
   background: white;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -270,44 +288,6 @@ nav ul li a:hover {
 
 .packing-list ul li:hover {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Gallery Section */
-.gallery {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-
-.grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Contact Section */
-.contact {
-  padding: 50px 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.contact a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* Footer */
@@ -327,10 +307,9 @@ footer {
 
   .crew-container {
     flex-direction: column;
-    align-items: center;
   }
 
-  .day-image {
+  .day img {
     max-height: 200px;
   }
 }
