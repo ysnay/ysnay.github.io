@@ -12,12 +12,26 @@ header {
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 15px 40px;
+  padding: 10px 20px; /* Reduced padding for tighter fit */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem; /* Ensure logo doesn't push content */
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px; /* Reduced padding */
+  margin-left: auto; /* Pushes it to the right */
 }
 
 /* Navigation */
@@ -65,7 +79,7 @@ nav ul li a:hover {
 }
 
 .headline {
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
@@ -126,12 +140,10 @@ nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 
-/* Crew Member Hover Effect */
 .crew-member:hover {
   transform: scale(1.05);
 }
 
-/* Crew Member Image */
 .crew-member img {
   width: 100%;
   max-width: 160px;
@@ -141,35 +153,15 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-/* Crew Member Name */
 .crew-member h3 {
   font-size: 20px;
   color: #007BFF;
   margin-bottom: 10px;
 }
 
-/* Crew Member Bio */
 .crew-member p {
   font-size: 14px;
   color: #555;
-}
-
-/* Responsive Fix for Crew Section */
-@media (max-width: 768px) {
-  .crew-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .crew-member {
-    width: 90%;
-    max-width: 250px;
-  }
-
-  .crew-member img {
-    max-width: 140px;
-    height: 140px;
-  }
 }
 
 /* Itinerary Section */
@@ -185,7 +177,6 @@ nav ul li a:hover {
   color: #333;
 }
 
-/* Individual Itinerary Card */
 .day {
   background: white;
   padding: 30px;
@@ -195,10 +186,8 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
-  position: relative;
 }
 
-/* Itinerary Images */
 .day-image {
   width: 100%;
   max-height: 300px;
@@ -207,15 +196,14 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-/* Day Title */
 .day h3 {
   font-size: 28px;
   margin-bottom: 20px;
   color: #9FE2BF;
   font-weight: bold;
+  cursor: pointer;
 }
 
-/* Time Blocks */
 .time-block {
   margin: 10px 0;
   display: flex;
@@ -320,14 +308,130 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  header {
+    padding: 10px 15px; /* Tighter padding on mobile */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute; /* Position it absolutely */
+    top: 10px; /* Align with top edge */
+    right: 15px; /* Align with right edge */
+    padding: 0; /* Remove padding to fit tightly */
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Adjusted for tighter header */
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+  }
+
+  .banner {
+    height: 80vh;
+  }
+
   .headline {
-    font-size: 28px;
+    font-size: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 
   .crew-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .crew-member {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  .crew-member img {
+    max-width: 120px;
+    height: 120px;
+  }
+
+  .crew-member:hover {
+    transform: none;
+  }
+
+  .day {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .day-image {
+    max-height: 150px;
+  }
+
+  .day h3 {
+    font-size: 22px;
+  }
+
+  .time-block h4 {
+    font-size: 18px;
+  }
+
+  .time-block p {
+    font-size: 14px;
+  }
+
+  .packing-list ul {
+    width: 90%;
+  }
+
+  .packing-list ul li {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .packing-list ul li:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .crew-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .crew-member {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .crew-member img {
+    max-width: 140px;
+    height: 140px;
   }
 
   .day-image {
