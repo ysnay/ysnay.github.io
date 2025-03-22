@@ -6,13 +6,51 @@
   font-family: Arial, sans-serif;
 }
 
+/* Dark Mode */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode nav ul,
+body.dark-mode .day,
+body.dark-mode .crew-member,
+body.dark-mode .packing-list ul li {
+  background: #2a2a2a;
+  color: #f0f0f0;
+}
+
+body.dark-mode .crew,
+body.dark-mode .itinerary,
+body.dark-mode .packing-list,
+body.dark-mode .contact {
+  background: #222;
+}
+
+body.dark-mode footer {
+  background: #111;
+}
+
+body.dark-mode .overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode nav ul li a {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #66b3ff;
+}
+
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 10px 20px; /* Reduced padding for tighter fit */
+  padding: 10px 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
@@ -20,18 +58,24 @@ header {
   z-index: 1000;
 }
 
-/* Logo */
 .logo {
-  font-size: 1.5rem; /* Ensure logo doesn't push content */
+  font-size: 1.5rem;
 }
 
-/* Hamburger Icon */
 .hamburger {
-  display: none; /* Hidden on desktop */
+  display: none;
   font-size: 24px;
   cursor: pointer;
-  padding: 5px; /* Reduced padding */
-  margin-left: auto; /* Pushes it to the right */
+  padding: 0;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
 }
 
 /* Navigation */
@@ -60,7 +104,7 @@ nav ul li a:hover {
 /* Hero Section */
 .banner {
   background: url("assets/hero.jpg") no-repeat center center/cover;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +172,6 @@ nav ul li a:hover {
   margin: auto;
 }
 
-/* Crew Member Card */
 .crew-member {
   background: white;
   padding: 20px;
@@ -186,6 +229,11 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
+  transition: background-color 0.3s;
+}
+
+.day.active {
+  background-color: #e6f3ff; /* Light blue highlight for active day */
 }
 
 .day-image {
@@ -307,25 +355,53 @@ footer {
   font-size: 14px;
 }
 
+/* Back-to-Top Button */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+
+.back-to-top.visible {
+  display: block;
+  opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   header {
-    padding: 10px 15px; /* Tighter padding on mobile */
+    padding: 10px 15px;
   }
 
   .hamburger {
     display: block;
-    position: absolute; /* Position it absolutely */
-    top: 10px; /* Align with top edge */
-    right: 15px; /* Align with right edge */
-    padding: 0; /* Remove padding to fit tightly */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  .dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 50px;
   }
 
   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px; /* Adjusted for tighter header */
+    top: 50px;
     left: 0;
     width: 100%;
     background: white;
@@ -344,7 +420,7 @@ footer {
   }
 
   .banner {
-    height: 80vh;
+    height: 60vh;
   }
 
   .headline {
@@ -415,6 +491,15 @@ footer {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    display: block;
+    opacity: 0;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
   }
 }
 
