@@ -97,7 +97,7 @@ header {
   cursor: pointer;
   padding: 5px;
   position: absolute;
-  top: 11px;
+  top: 8px;
   left: 220px; /* Positioned to the right of the logo */
 }
 
