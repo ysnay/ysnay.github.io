@@ -339,17 +339,17 @@ nav ul li a:hover {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted to a fixed minimum width */
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted to a larger minimum width */
+  gap: 0; /* Removed gap so images touch each other */
   padding: 20px;
 }
 
 .grid img {
-  width: 300px; /* Fixed width for all images */
-  height: 200px; /* Fixed height for all images */
+  width: 350px; /* Larger fixed width for all images */
+  height: 250px; /* Larger fixed height for all images */
   object-fit: cover; /* Ensures images fill the space without distortion */
   object-position: center; /* Centers the image within the container */
-  border-radius: 8px;
+  border-radius: 0; /* Removed border-radius for a seamless look */
 }
 
 /* Contact Section */
@@ -516,11 +516,13 @@ footer {
 
   .grid {
     grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 0; /* Keep gap at 0 for mobile */
   }
 
   .grid img {
     width: 100%; /* Full width on mobile */
-    height: 200px; /* Keep height consistent */
+    height: 250px; /* Keep height consistent */
+    border-radius: 0; /* Keep seamless look */
   }
 
   .back-to-top {
@@ -557,11 +559,13 @@ footer {
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    gap: 0; /* Keep gap at 0 for medium screens */
   }
 
   .grid img {
     width: 100%; /* Adjust width to fit grid */
-    height: 200px; /* Keep height consistent */
+    height: 250px; /* Keep height consistent */
+    border-radius: 0; /* Keep seamless look */
   }
 }
 
