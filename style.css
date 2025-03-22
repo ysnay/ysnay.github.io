@@ -53,6 +53,17 @@ body.dark-mode .time-block p {
   color: #d0d0d0; /* Light gray for text */
 }
 
+/* Improve legibility in dark mode for crew descriptions */
+body.dark-mode .crew-member p {
+  color: #d0d0d0; /* Light gray for crew descriptions */
+}
+
+/* Improve legibility in dark mode for section titles */
+body.dark-mode .itinerary h2,
+body.dark-mode .packing-list h2 {
+  color: #f0f0f0; /* Bright white for section titles */
+}
+
 /* Header */
 header {
   display: flex;
