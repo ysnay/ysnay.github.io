@@ -340,16 +340,32 @@ nav ul li a:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted to a larger minimum width */
-  gap: 0; /* Removed gap so images touch each other */
-  padding: 20px;
+  gap: 0; /* Images touch each other */
+  padding: 0; /* Removed padding to make images full-width */
 }
 
 .grid img {
-  width: 350px; /* Larger fixed width for all images */
-  height: 250px; /* Larger fixed height for all images */
+  width: 100%; /* Full width of the grid cell */
+  height: 250px; /* Fixed height for all images */
   object-fit: cover; /* Ensures images fill the space without distortion */
   object-position: center; /* Centers the image within the container */
-  border-radius: 0; /* Removed border-radius for a seamless look */
+}
+
+/* Apply border-radius selectively to outer edges of the grid */
+.grid img:first-child {
+  border-top-left-radius: 8px; /* Top-left corner of the first image */
+}
+
+.grid img:nth-child(3) {
+  border-top-right-radius: 8px; /* Top-right corner of the third image (top row) */
+}
+
+.grid img:nth-child(4) {
+  border-bottom-left-radius: 8px; /* Bottom-left corner of the fourth image (bottom row) */
+}
+
+.grid img:last-child {
+  border-bottom-right-radius: 8px; /* Bottom-right corner of the last image */
 }
 
 /* Contact Section */
@@ -517,12 +533,31 @@ footer {
   .grid {
     grid-template-columns: 1fr; /* Single column on mobile */
     gap: 0; /* Keep gap at 0 for mobile */
+    padding: 0; /* Keep padding at 0 for mobile */
   }
 
   .grid img {
     width: 100%; /* Full width on mobile */
     height: 250px; /* Keep height consistent */
-    border-radius: 0; /* Keep seamless look */
+  }
+
+  /* Adjust border-radius for mobile (single column) */
+  .grid img:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; /* Top-right for first image in single column */
+  }
+
+  .grid img:nth-child(3) {
+    border-top-right-radius: 0; /* Reset for mobile */
+  }
+
+  .grid img:nth-child(4) {
+    border-bottom-left-radius: 0; /* Reset for mobile */
+  }
+
+  .grid img:last-child {
+    border-bottom-left-radius: 8px; /* Bottom-left for last image in single column */
+    border-bottom-right-radius: 8px; /* Bottom-right for last image in single column */
   }
 
   .back-to-top {
@@ -560,12 +595,37 @@ footer {
   .grid {
     grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
     gap: 0; /* Keep gap at 0 for medium screens */
+    padding: 0; /* Keep padding at 0 for medium screens */
   }
 
   .grid img {
     width: 100%; /* Adjust width to fit grid */
     height: 250px; /* Keep height consistent */
-    border-radius: 0; /* Keep seamless look */
+  }
+
+  /* Adjust border-radius for medium screens (two columns) */
+  .grid img:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  .grid img:nth-child(2) {
+    border-top-right-radius: 8px; /* Top-right for second image in two-column layout */
+  }
+
+  .grid img:nth-child(3) {
+    border-top-right-radius: 0; /* Reset for medium screens */
+  }
+
+  .grid img:nth-child(5) {
+    border-bottom-left-radius: 8px; /* Bottom-left for fifth image in two-column layout */
+  }
+
+  .grid img:nth-child(4) {
+    border-bottom-left-radius: 0; /* Reset for medium screens */
+  }
+
+  .grid img:last-child {
+    border-bottom-right-radius: 8px;
   }
 }
 
