@@ -96,7 +96,9 @@ header {
   font-size: 20px;
   cursor: pointer;
   padding: 5px;
-  position: static; /* Default to flex flow on desktop */
+  position: absolute;
+  top: 10px;
+  right: 15px; /* Default to right side on desktop */
 }
 
 /* Navigation */
@@ -415,7 +417,7 @@ footer {
   .dark-mode-toggle {
     position: absolute;
     top: 10px;
-    right: 50px;
+    right: 50px; /* Adjusted for mobile, next to hamburger */
   }
 
   nav ul {
