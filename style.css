@@ -98,7 +98,7 @@ header {
   padding: 5px;
   position: absolute;
   top: 10px;
-  right: 180px; /* Positioned to the left of navigation, avoiding overlap */
+  right: 350px; /* Increased to clear the navigation menu */
 }
 
 /* Navigation */
