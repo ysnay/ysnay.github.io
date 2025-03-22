@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   };
 
+  // Smooth scroll for navigation links
   document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -44,6 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.textContent = '☰';
       }
     });
+  });
+
+  // Smooth scroll for "Start Exploring" button
+  const ctaButton = document.querySelector('.cta-button');
+  ctaButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = ctaButton.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    targetSection.scrollIntoView({ behavior: 'smooth' });
   });
 
   // Dark Mode Toggle

@@ -44,6 +44,15 @@ body.dark-mode nav ul li a:hover {
   color: #66b3ff;
 }
 
+/* Improve legibility in dark mode for itinerary */
+body.dark-mode .time-block h4 {
+  color: #f0f0f0; /* Bright white for headings */
+}
+
+body.dark-mode .time-block p {
+  color: #d0d0d0; /* Light gray for text */
+}
+
 /* Header */
 header {
   display: flex;
@@ -76,6 +85,7 @@ header {
   font-size: 20px;
   cursor: pointer;
   padding: 5px;
+  position: static; /* Default to flex flow on desktop */
 }
 
 /* Navigation */
