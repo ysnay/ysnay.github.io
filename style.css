@@ -6,13 +6,71 @@
   font-family: Arial, sans-serif;
 }
 
+/* Dark Mode */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode nav ul,
+body.dark-mode .day,
+body.dark-mode .crew-member,
+body.dark-mode .packing-list ul li {
+  background: #2a2a2a;
+  color: #f0f0f0;
+}
+
+body.dark-mode .crew,
+body.dark-mode .itinerary,
+body.dark-mode .packing-list,
+body.dark-mode .contact {
+  background: #222;
+}
+
+body.dark-mode footer {
+  background: #111;
+}
+
+body.dark-mode .overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode nav ul li a {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #66b3ff;
+}
+
+/* Improve legibility in dark mode for itinerary */
+body.dark-mode .time-block h4 {
+  color: #f0f0f0; /* Bright white for headings */
+}
+
+body.dark-mode .time-block p {
+  color: #d0d0d0; /* Light gray for text */
+}
+
+/* Improve legibility in dark mode for crew descriptions */
+body.dark-mode .crew-member p {
+  color: #d0d0d0; /* Light gray for crew descriptions */
+}
+
+/* Improve legibility in dark mode for section titles */
+body.dark-mode .itinerary h2,
+body.dark-mode .packing-list h2 {
+  color: #f0f0f0; /* Bright white for section titles */
+}
+
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 10px 20px; /* Reduced padding for tighter fit */
+  padding: 10px 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
@@ -20,18 +78,27 @@ header {
   z-index: 1000;
 }
 
-/* Logo */
 .logo {
-  font-size: 1.5rem; /* Ensure logo doesn't push content */
+  font-size: 1.5rem;
 }
 
-/* Hamburger Icon */
 .hamburger {
-  display: none; /* Hidden on desktop */
+  display: none;
   font-size: 24px;
   cursor: pointer;
-  padding: 5px; /* Reduced padding */
-  margin-left: auto; /* Pushes it to the right */
+  padding: 0;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  top: 8px;
+  left: 220px; /* Positioned to the right of the logo */
 }
 
 /* Navigation */
@@ -60,7 +127,7 @@ nav ul li a:hover {
 /* Hero Section */
 .banner {
   background: url("assets/hero.jpg") no-repeat center center/cover;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +195,6 @@ nav ul li a:hover {
   margin: auto;
 }
 
-/* Crew Member Card */
 .crew-member {
   background: white;
   padding: 20px;
@@ -186,6 +252,11 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
+  transition: background-color 0.3s;
+}
+
+.day.active {
+  background-color: #e6f3ff; /* Light blue highlight for active day */
 }
 
 .day-image {
@@ -268,16 +339,33 @@ nav ul li a:hover {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted to a larger minimum width */
+  gap: 0; /* Images touch each other */
+  padding: 0; /* Removed padding to make images full-width */
 }
 
 .grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; /* Full width of the grid cell */
+  height: 250px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  object-position: center; /* Centers the image within the container */
+}
+
+/* Apply border-radius selectively to outer edges of the grid */
+.grid img:first-child {
+  border-top-left-radius: 8px; /* Top-left corner of the first image */
+}
+
+.grid img:nth-child(3) {
+  border-top-right-radius: 8px; /* Top-right corner of the third image (top row) */
+}
+
+.grid img:nth-child(4) {
+  border-bottom-left-radius: 8px; /* Bottom-left corner of the fourth image (bottom row) */
+}
+
+.grid img:last-child {
+  border-bottom-right-radius: 8px; /* Bottom-right corner of the last image */
 }
 
 /* Contact Section */
@@ -307,25 +395,54 @@ footer {
   font-size: 14px;
 }
 
+/* Back-to-Top Button */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+
+.back-to-top.visible {
+  display: block;
+  opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   header {
-    padding: 10px 15px; /* Tighter padding on mobile */
+    padding: 10px 15px;
   }
 
   .hamburger {
     display: block;
-    position: absolute; /* Position it absolutely */
-    top: 10px; /* Align with top edge */
-    right: 15px; /* Align with right edge */
-    padding: 0; /* Remove padding to fit tightly */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  .dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 50px; /* Adjusted for mobile, next to hamburger */
+    left: auto; /* Override desktop left positioning */
   }
 
   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px; /* Adjusted for tighter header */
+    top: 50px;
     left: 0;
     width: 100%;
     background: white;
@@ -344,7 +461,7 @@ footer {
   }
 
   .banner {
-    height: 80vh;
+    height: 60vh;
   }
 
   .headline {
@@ -414,7 +531,42 @@ footer {
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 0; /* Keep gap at 0 for mobile */
+    padding: 0; /* Keep padding at 0 for mobile */
+  }
+
+  .grid img {
+    width: 100%; /* Full width on mobile */
+    height: 250px; /* Keep height consistent */
+  }
+
+  /* Adjust border-radius for mobile (single column) */
+  .grid img:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; /* Top-right for first image in single column */
+  }
+
+  .grid img:nth-child(3) {
+    border-top-right-radius: 0; /* Reset for mobile */
+  }
+
+  .grid img:nth-child(4) {
+    border-bottom-left-radius: 0; /* Reset for mobile */
+  }
+
+  .grid img:last-child {
+    border-bottom-left-radius: 8px; /* Bottom-left for last image in single column */
+    border-bottom-right-radius: 8px; /* Bottom-right for last image in single column */
+  }
+
+  .back-to-top {
+    display: block;
+    opacity: 0;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
   }
 }
 
@@ -441,12 +593,44 @@ footer {
 
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    gap: 0; /* Keep gap at 0 for medium screens */
+    padding: 0; /* Keep padding at 0 for medium screens */
+  }
+
+  .grid img {
+    width: 100%; /* Adjust width to fit grid */
+    height: 250px; /* Keep height consistent */
+  }
+
+  /* Adjust border-radius for medium screens (two columns) */
+  .grid img:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  .grid img:nth-child(2) {
+    border-top-right-radius: 8px; /* Top-right for second image in two-column layout */
+  }
+
+  .grid img:nth-child(3) {
+    border-top-right-radius: 0; /* Reset for medium screens */
+  }
+
+  .grid img:nth-child(5) {
+    border-bottom-left-radius: 8px; /* Bottom-left for fifth image in two-column layout */
+  }
+
+  .grid img:nth-child(4) {
+    border-bottom-left-radius: 0; /* Reset for medium screens */
+  }
+
+  .grid img:last-child {
+    border-bottom-right-radius: 8px;
   }
 }
 
 @media (min-width: 1025px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Three columns on large screens */
   }
 }
